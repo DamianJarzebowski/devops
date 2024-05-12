@@ -1,0 +1,19 @@
+ansible --list-hosts loadbalancer
+ansible --list-hosts webserver
+ansible --list-hosts database
+ansible --list-hosts "app0*"
+ansible --list-hosts database:control
+ansible --list-hosts webserver[0]
+ansible --list-hosts \!control
+
+ansible --list-hosts "*" / all
+
+ansible -m ping all
+
+ansible -m ping all
+
+ansible -m command -a "hostname" all
+
+ansible-playbook playbooks/hostname.yaml 
+
+ansible-playbook playbooks/loadbalancer.yaml --ask-become-pass
