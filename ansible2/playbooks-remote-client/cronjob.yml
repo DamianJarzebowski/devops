@@ -1,0 +1,18 @@
+---
+- name: Create a cron job
+  hosts: AnsibleTestAzure
+
+  tasks:
+    - name: Schedule cron
+      cron:
+        name: This job is scheduled by Ansible
+        minute: "0"
+        hour: "10"
+        day: "*"
+        month: "*"
+        weekday: "4"
+        user: root
+        job: "/home/iafzal/cfile.sh"
+
+# Ten playbook skonfiguruje zadanie cron, które będzie uruchamiać skrypt /home/iafzal/cfile.sh jako
+# użytkownik root o godzinie 10:00 w każdy czwartek, niezależnie od dnia miesiąca i miesiąca.

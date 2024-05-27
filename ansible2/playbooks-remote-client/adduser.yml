@@ -1,0 +1,11 @@
+---
+- name: Playbook for creating users
+  hosts: AnsibleTestAzure
+  become: true
+
+  tasks:
+  - name: Create users
+    user:
+     name: george
+     home: /home/george
+     shell: /bin/bash

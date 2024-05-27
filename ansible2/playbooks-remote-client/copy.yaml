@@ -1,0 +1,13 @@
+---
+- name: Copy file from local to remote clients
+  hosts: AnsibleTestAzure
+  
+  tasks:
+  - name: Copying file 
+    become: true
+    copy:
+     src: ./testfile.txt # from local machine
+     dest: /tmp # to hosts
+     owner: azureuser
+    #  group: iafzal
+     mode: 0644

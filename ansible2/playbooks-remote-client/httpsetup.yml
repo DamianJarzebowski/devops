@@ -1,0 +1,29 @@
+---
+- name: Setup Apache2 and open firewall port
+  hosts: AnsibleTestAzure
+  become: yes
+
+  tasks:
+    - name: Install Apache2 packages
+      apt:
+        name:
+          - apache2
+          - libapache2-mod-php
+        state: present
+        update_cache: yes
+
+    - name: Start Apache2
+      systemd:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Open port 80 for HTTP access
+      ufw:
+        rule: allow
+        port: '80'
+        proto: tcp
+
+    - name: Enable UFW firewall
+      ufw:
+        state: disabled

@@ -1,0 +1,2 @@
+[azure_hosts]
+AnsibleTestAzure ansible_host=172.210.70.10 ansible_user=azureuser ansible_ssh_private_key_file=~/.ssh/AnsibleTesting_key.pem
