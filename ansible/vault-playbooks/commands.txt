@@ -1,0 +1,39 @@
+# ansible-vault create httpbyvault.yml
+
+Next put it in vim 
+---
+- name: Install httpd package
+  hosts: localhost
+
+tasks:
+    - name: Install package 
+      apt:
+        name: apache2
+        state: present
+
+When i will try run playbook i will be asked at password from vault run command
+ansible-playbook httpvault.yml --ask-vault-pass
+
+
+
+
+
+encrypt word with vault
+
+ansible-vault encrypt_string httpd
+
+result
+
+New Vault password: 
+Confirm New Vault password: 
+Encryption successful
+!vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          63613963613338393962336135616431336662336531623061373466383637303166323162623066
+          3039396332303863363230376638343837666237313639390a393063343363366663633561313361
+          63313162643037346539633230313434613436666632336635353061396162303937383265303034
+          6432363462636333610a656165363065353832626435313465396435346631633431306230653935
+          3338
+
+
+ansible-playbook vault-playbooks/outputbystring.yml --ask-vault-pass
