@@ -40,7 +40,7 @@ server {
 	listen [::]:80;
         root /var/www/druga;
         index index.html index.htm;
-        server_name sub2.hehel.xyz;
+        server_name sub2.djax.net.pl;
 }
 ```
 
@@ -59,4 +59,10 @@ nginx -t
 
 ```
 nginx -s reload
+```
+
+if u want restart
+
+```
+sudo service nginx restart
 ```
