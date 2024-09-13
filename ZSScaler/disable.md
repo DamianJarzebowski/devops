@@ -23,3 +23,7 @@ As before, we certainly want to activate our VPN again, this can be done via the
 sudo launchctl load /Library/LaunchDaemons/com.zscaler.service.plist
 sudo launchctl load /Library/LaunchDaemons/com.zscaler.tunnel.plist
 ```
+
+
+## Source
+https://medium.com/@pmorosan/disable-zscaler-without-password-windows-931a0b8b6337
