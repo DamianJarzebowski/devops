@@ -31,6 +31,9 @@ Zmiana selinux na enforceing
 setenforce 1
 ```
 
+### Powyższe zmieni ustawienia selinux tylko tymczasowo, po restarcie maszyny selinux powróci do ustawień z pliku w catalogu /etc/selinux/config dlatego to tam należy zmienić ustawienia na stałe.
+
+<br>
 W katalogu /var/log/audit mamy plik audit.log <br>
 Jeśli znajdziermy tam avc: denied oznacza to, że selinux zablokował dostęp do pliku.
 

@@ -17,3 +17,6 @@ ansible -m command -a "hostname" all
 ansible-playbook playbooks/hostname.yaml 
 
 ansible-playbook playbooks/loadbalancer.yaml --ask-become-pass
+
+Do uruchomienia ze swoimi zmiennymi z konkretnego pliku
+ansible-playbook azure-vm-provisioning.yml -e @myVars.yaml
