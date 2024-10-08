@@ -15,3 +15,6 @@
 ### passwd dj - zmiana hasłą usera dj
 
 ### alternatives --config java - ustawia domyślną wersje javy przydany tool do doinstalowania
+
+### id - sprawdza jaki jest obecny użytkownik
+Użytkownicy o id poniżej 1000 to użytkownicy systemowi bez ustawionego hasła, na których nie można się zalogować
