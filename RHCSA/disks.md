@@ -46,20 +46,63 @@ Wyświetlenie tablicy dysków
 lsblk
 ```
 
-Leszek wyjaśnij
+### Backup tabeli partycji dla dysku
+## DLA MBR
 
-DLA MBR
-
-Czy to robi backup dysku?
-
+```
+# DO
 dd if=/dev/vda of=mbr .backup bs=512 count=1
 
-Załądowanie backupu?
+# LOAD
 dd if=mbr.backup of=/dev/vdb
+```
 
+## Dla GPT
 
-Dla GPT
-
+```
+# DO
 sfdisk -d /dev/vdc > gpt
 
+# LOAD
 sfdisk /dev/vdb < gpt>
+```
+<br>
+<br>
+
+```
+# Komenda do podglądu dysków i partycji
+lsblk 
+
+DLA DYSKÓW MBR
+
+# Wejście w interakcje za pomocą komendy fdisk w interakcje z wybranym dyskiem
+fdisk /dev/sda
+fdisk -l /dev/sda  <-- Tryb interaktywny do wyswietlenia partycji
+
+# Wyświetlenie partycji
+p
+
+# Utworzenie nowej partycji
+n
+
+- Trzeba uzuepłnić kilka rzeczy w podaniu sektorów mozna po prostu zrobić +510M ustawi to rozmair dysku na 510Mb
+
+# Wyjście z fdisk z zapisaniem zmian
+w
+
+# Wyjście z fdisk bez zapisywania zmian
+q
+
+# Otagowanie partycji (W zadaniu może być potrzeba w otagowaniu partycji swap)
+t
+
+# Kasowanie partycji
+d
+
+DLA DYSKÓW GPT
+
+# Wejście w interakcje za pomocą komendy gdisk w interakcje z wybranym dyskiem
+gdisk
+
+Wszystko tak samo jak dla MBR
+```
