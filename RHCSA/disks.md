@@ -105,4 +105,7 @@ DLA DYSKÓW GPT
 gdisk
 
 Wszystko tak samo jak dla MBR
+
+# Polecenie używane jest do usuwania informacji o systemach plików i tabelach partycji z urządzenia blokowego, w tym przypadku /dev/sdd. Oto, co to dokładnie robi
+wipefs -a /dev/sdd
 ```
