@@ -109,3 +109,44 @@ Wszystko tak samo jak dla MBR
 # Polecenie używane jest do usuwania informacji o systemach plików i tabelach partycji z urządzenia blokowego, w tym przypadku /dev/sdd. Oto, co to dokładnie robi
 wipefs -a /dev/sdd
 ```
+
+## Kasowanie danych na dysku
+
+```
+Do dysków twardych
+
+shred --help
+
+----
+
+dd if-/dev/urandom of=/dev/vdc bs=512 count=1
+
+```
+
+## Formatowanie 
+
+```
+Zformatowanie partycji vdb1 z filesystemem xfs
+
+mkfs.xfs /dev/vdb1
+
+```
+
+## Mountowanie
+
+```
+Wchodzimy w ten plik i mozemy się zasugerować poprzednimi wpisami
+
+vim /etc/fstab
+
+Musimy dodać wiersz
+
+/dev/vdb1               /data                   xfs             defaults            0 0
+PARTYCJA                PUNKT MOUNTOWANIA       FILE SYSTEM     PARAMETRY EXTRA     1 zero czy dysk ma byc sprawdzany a 2 zero czy ma bym dump fs robiony
+
+Po wszystkim można zrobić poniższe by upewnić się, że system został zamontowany 
+
+systemctl daemon-reload
+mount -a
+df -h
+```
